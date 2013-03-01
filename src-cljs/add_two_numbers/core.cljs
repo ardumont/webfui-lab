@@ -4,11 +4,7 @@
 
 (defn render-all [state]
   (let [{:keys [a b]} state]
-    [:div [:input#a {:watch :watch :value a}]
-     " plus "
-     [:input#b {:watch :watch :value b}]
-     [:p " equals "]
-     [:span (+ a b)]]))
+    [:div [:input#a {:watch :watch :value a}] " + " [:input#b {:watch :watch :value b}] [:p " = "] [:span (+ a b)]]))
 
 (defn valid-integer [s]
   (and (< (count s) 15) (re-matches #"^[0-9]+$" s)))
